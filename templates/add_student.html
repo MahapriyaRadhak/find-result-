@@ -1,0 +1,45 @@
+{% extends '_layout.html' %}
+{% block body %}
+<div class='row' style='margin-left:200px;'>
+		<div class='col-md-6 mt-5'>
+			<h2 class=' text-center' style='color:purple;'><i class="fa fa-users" aria-hidden="true"></i> Add student</h2>
+			<form style='padding:10%' method="POST" style='margin-right:20px;' action="" enctype="multipart/form-data">
+				<div class='form-group'>
+					<label style='color:purple;'>Name</label>
+					<input type='text' name='uname' class='form-control'>
+				</div>
+				<div class='form-group'>
+					<label style='color:purple;'>Department</label>
+					<select class='form-control' name='did'>
+						<option>Select Department</option>
+						{% for row in dept %}
+							<option value='{{row.did}}'>{{row.dname}}-{{row.dyear}}</option>
+						{% endfor %}
+					</select>
+				</div>
+				<div class='form-group'>
+					<label style='color:purple;'>Email</label>
+					<input type='text' name='uemail' class='form-control' >
+				</div>
+				<div class='form-group'>
+					<label style='color:purple;'>Mobile</label>
+					<input type='text' name='umob' class='form-control' >
+				</div>
+				<div class='form-group'>
+					<label style='color:purple;'>Roll no</label>
+					<input type='text' name='uroll' class='form-control' >
+				</div>
+				<div class='form-group'>
+				<label style='color:purple;'>Upload Photo</label>
+				<input type='file' name='file' class='form-control'>
+				</div>
+				<div class='form-group'>
+					<input type='submit' name='submit' value='ADD' class='btn btn-lg mt-2' style='background-color:purple; color:white; margin-left:150px;'>
+					
+				</div>
+				
+			</form>
+		</div>
+	</div>	
+	
+{% endblock %}

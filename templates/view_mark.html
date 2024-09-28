@@ -1,0 +1,70 @@
+{% extends '_layout.html' %}
+{% block body %}
+	<div class='row'>
+		<div class='col-md-10 '>
+			<h2  style='color:purple; margin-left:350px;' class='mt-5'><i class="fa fa-clipboard" aria-hidden="true"></i> View mark</h2>
+			<form style='padding:10%; '  method="POST"  action="">
+					<div class='form-group'>
+						<label style='color:purple;'>Department</label>
+						<select class='form-control' name='did'>
+							<option>Select Department</option>
+							{% for row in depta %}
+								<option value='{{row.did}}'>{{row.dname}}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class='form-group'>
+						<label style='color:purple;'>Semester</label>
+					
+						<select name='usem'class='form-control' >
+							<option>Select semester</option>
+							<option>I</option>
+							<option>II</option>
+							<option>III</option>
+							<option>IV</option>
+							<option>V</option>
+							<option>VI</option>
+						</select>
+					</div>
+					<input type='submit' name='submit' value='submit' class='btn btn-lg ml-5' style='background-color:purple; color:white;'>
+			</form>
+		</div>
+	
+			<div class='col-md-10 '>
+				<h2 class=' text-center' style='color:purple;'><i class="fa fa-clipboard" aria-hidden="true"></i> View Mark details</h2>
+					<table class='table table-bordered  ml-5' >
+						<thead>
+							<tr style='background-color:purple; color:white;'>
+								<th>Sno</th>
+								<th>Department</th>
+								<th>Semester</th>
+								<th>Roll no</th>
+								<th>Sub 1</th>
+								<th>Sub 2</th>
+								<th>Sub 3</th>
+								<th>Sub 4</th>
+								<th>Sub 5</th>
+								<th>Result</th>	
+							</tr>
+						</thead>
+						<tbody>
+							{% for row in status %}
+								<tr>
+									<td>{{loop.index}}</td>
+									<td>{{row.dname}}</td>
+									<td>{{row.sem}}</td>
+									<td>{{row.srollno}}</td>
+									<td>{{row.s1}}</td>
+									<td>{{row.s2}}</td>
+									<td>{{row.s3}}</td>
+									<td>{{row.s4}}</td>
+									<td>{{row.s5}}</td>
+									<td>{{row.status}}</td>
+								</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+					
+			</div>
+	</div>
+{% endblock %}

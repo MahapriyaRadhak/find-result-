@@ -1,0 +1,32 @@
+{% extends '_layout.html' %}
+{% block body %}
+		
+		<div class='col-md-4 ' style='margin-top:20px;'>
+		<nav aria-label="breadcrumb" class='mt-5' >
+		  <ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="/homee" style='text-decoration:none;'>Home</a></li>
+			<li class="breadcrumb-item"><a href="/add_department" style='text-decoration:none;'>Add department</a></li>
+			<li class="breadcrumb-item" style='text-decoration:none;'> Edit</li>
+		  </ol>
+		</nav>
+			<h2 class='ml-4' style='color:purple;'> <i class="fa fa-user-plus" aria-hidden="true"></i> Edit add Department</h2>
+			<form style='padding:10%' method="POST" action="">
+				<div class='form-group'>
+					<label style='color:purple;'>Department</label>
+					<input type='text' name='udep' class='form-control'value={{datas.dname}}  >
+				</div>
+				<div class='form-group'>
+					<label style='color:purple;'>Year</label>
+					<input type='text' name='uyear' class='form-control' value={{datas.dyear}}>
+				</div>
+				<div class='form-group'>
+					<label style='color:purple;'>Semester</label>
+					<input type='text' name='usem' class='form-control' value={{datas.sem}}>
+				</div>
+				<div class='form-group'>
+					<input type='submit' name='submit' value='ADD' class='btn btn-lg' style='background-color:purple; color:white;'>
+				</div>
+				
+			</form>
+		</div>
+{% endblock %}

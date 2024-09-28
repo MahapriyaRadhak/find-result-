@@ -1,0 +1,72 @@
+{% extends 'student_layout.html' %}
+{% block body %}
+	<div class='row'>
+		<div class='col-md-4 mt-4'>
+			<h2 class=' text-center' style='color:purple;'><i class="fa fa-clipboard" aria-hidden="true"></i> View Result</h2>
+		
+			<table class='table table-bordered table-striped mt-5' style=' margin-left:100px;'  >
+				<thead style='background-color:purple; font-size:20px; color:white;' class='text-center' >
+					<tr>
+						<th colspan='2'>Profile</th>
+					</tr>
+				</thead>
+				<tbody>
+				{% if status %}
+					<tr style='font-size:19px; color:purple;'>
+						<td>Roll No</td>
+						<td>{{status[0].srollno}}</td>
+					</tr>
+					<tr style='font-size:19px; color:purple;'>
+						<td>Student Name</td>
+						<td>{{status[0].sname}}</td>
+					</tr>
+					<tr style='font-size:19px; color:purple;'>
+						<td>Department</td>
+						<td>{{status[0].dname}}</td>
+					</tr>
+					<tr style='font-size:19px; color:purple;'>
+						<td>Semester</td>
+						<td>{{status[0].sem}}</td>
+					</tr>
+					
+
+				{% endif %}
+				</tbody>
+			</table>
+		</div>
+	
+		<div class='col-md-10' >
+			<table class='table table-bordered mt-5 table-striped' style='margin-left:100px;' >
+				<thead>
+				{% if status %}
+					<tr style='background-color:purple; font-size:20px; color:white;'>
+						<th>{{status[0].sbname}}</th>
+						<th>{{status[1].sbname}}</th>
+						<th>{{status[2].sbname}}</th>
+						<th>{{status[3].sbname}}</th>
+						<th>{{status[4].sbname}}</th>
+					</tr>
+				{% endif %}
+				</thead>
+				<tbody>
+					{% if status %}
+					<tr style='font-size:19px; color:purple;'>
+						<td>{{status[0].s1}}</td>
+						<td>{{status[0].s2}}</td>
+						<td>{{status[0].s3}}</td>
+						<td>{{status[0].s4}}</td>
+						<td>{{status[0].s5}}</td>
+					</tr>
+				{% endif %}
+				</tbody>
+			</table>	
+		</div>
+	</div>
+	<div class='row'>
+	<div class='col-md-12'>
+		{% if status %}
+			<marquee scrollamount='20' style='font-size:30;color:purple;'> you are {{status[0].status}} !!</marquee>
+		{% endif %}
+	</div>
+	</div>
+{% endblock %}

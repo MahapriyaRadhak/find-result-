@@ -1,0 +1,40 @@
+{% extends '_layout.html' %}
+{% block body %}
+<div class='row'>
+	<div class='col-md-11 mt-5'>
+		<h2 class=' text-center' style='color:purple;'><i class="fa fa-address-card" aria-hidden="true"></i> View student details</h2>
+			<table class='table table-bordered mt-4 ml-5' >
+				<thead>
+					<tr style='background-color:purple; color:white;'>
+						<th>Sno</th>
+						<th>Name</th>
+						<th>Department</th>
+						<th>Email</th>
+						<th>Mobile</th>
+						<th>Roll no</th>
+						<th>Images</th>
+						<th>Edit</th>
+						<th>Delete</th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					{% for row in datas %}
+						<tr>
+							<td>{{loop.index}}</td>
+							<td>{{row.sname}}</td>
+							<td>{{row.dname}}</td>
+							<td>{{row.semail}}</td>
+							<td>{{row.smobile}}</td>
+							<td>{{row.srollno}}</td>
+							<td><img src='{{url_for("static",filename="images/"+row.simage)}}'style='width:120px;'></td>
+							<td><a href='{{url_for("edit_add_student",stid=row.stid)}}' class='btn btn-md' style='background-color:purple; color:white;'> Edit</a></td>
+							<td><a href='{{url_for("delete_add_student",stid=row.stid)}}' class='btn btn-md' style='background-color:purple; color:white;' onclick='return confirm("Are you sure")'>Delete</a></td>
+							
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+	</div>
+	</div>
+{% endblock %}

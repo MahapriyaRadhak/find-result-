@@ -1,0 +1,72 @@
+{% extends '_layout.html' %}
+{% block body %}
+	<div class='row'>
+		<div class='col-md-4 mt-5'>
+			<h2 class=' text-center' style='color:purple;'><i class="fa fa-clone" aria-hidden="true"></i> Add Subject</h2>
+			<form style='padding:10%' method="POST" action="">
+				<div class='form-group'>
+					<label style='color:purple;'>Subject name</label>
+					<input type='text' name='usub' class='form-control'  >
+				</div>
+				<div class='form-group'>
+					<label style='color:purple;'>Department</label>
+					<select class='form-control' name='did'>
+						<option>Select Department</option>
+						{% for row in dept %}
+							<option value='{{row.did}}'>{{row.dname}}-{{row.dyear}}</option>	
+						{% endfor %}
+					</select>	
+				</div>
+				<div class='form-group'>
+					<label style='color:purple;'>Semester</label>
+				
+					<select name='usem'class='form-control' >
+						<option>Select semester</option>
+						<option>I</option>
+						<option>II</option>
+						<option>III</option>
+						<option>IV</option>
+						<option>V</option>
+						<option>VI</option>
+					</select>
+				</div>
+				<div class='form-group'>
+					<label style='color:purple;'>Subject code</label>
+					<input type='text' name='ucode' class='form-control'>
+				</div>
+				<div class='form-group'>
+					<input type='submit' name='submit' value='ADD' class='btn btn-lg' style='background-color:purple; color:white;'>
+				</div>
+				
+			</form>
+		</div>
+		<div class='col-md-7 mt-5'>
+			<table class='table table-bordered' >
+				<thead>
+					<tr style='background-color:purple; color:white;'>
+						<th>Sno</th>
+						<th>Subject name</th>
+						<th>Semester</th>
+						<th>Department</th>
+						<th>Subject code</th>
+						<th>Edit</th>
+						<th>Delete</th>
+					</tr>
+				</thead>
+				<tbody>
+				{% for row in datas %}
+					<tr>
+						<td>{{loop.index}}</td>
+						<td>{{row.sbname}}</td>
+						<td>{{row.ssem}}</td>
+						<td>{{row.dname}}</td>
+						<td>{{row.sbcode}}</td>
+						<td><a href='{{url_for("edit_add_subject",sbid=row.sbid)}}' class='btn btn-md' style='background-color:purple; color:white;'> Edit</a></td>
+						<td><a href='{{url_for("delete_add_subject",sbid=row.sbid)}}' class='btn btn-md' style='background-color:purple; color:white;' onclick='return confirm("Are you sure")'>Delete</a></td>
+					</tr>
+				{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+{% endblock %}

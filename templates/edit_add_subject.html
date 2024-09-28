@@ -1,0 +1,36 @@
+{% extends '_layout.html' %}
+{% block body %}
+
+		<div class='col-md-4 mt-3'>
+		<nav aria-label="breadcrumb" class='mt-5' >
+		  <ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="/homee" style='text-decoration:none;'>Home</a></li>
+			<li class="breadcrumb-item"><a href="/add_subject" style='text-decoration:none;'>Add subject</a></li>
+			<li class="breadcrumb-item" style='text-decoration:none;'>Edi+++++t</li>
+		  </ol>
+		</nav>
+			<h2 class='ml-4' style='color:purple;'><i class="fa fa-clipboard" aria-hidden="true"></i> Edit Subject</h2>
+			<form style='padding:10%' method="POST" action="">
+				<div class='form-group'>
+					<label style='color:purple;'>Subject name</label>
+					<input type='text' name='usub' class='form-control'value={{datas.sbname}}  >
+				</div>
+				<div class='form-group'>
+					<label style='color:purple;'>Semester</label>
+					<input type='text' name='usem' class='form-control'value={{datas.ssem}}  >
+				</div>
+				<div class='form-group'>
+					<label style='color:purple;'>Department</label>
+					<input type='text' name='udep' class='form-control' value={{datas.did}}>
+				</div>
+				<div class='form-group'>
+					<label style='color:purple;'>Subject code</label>
+					<input type='text' name='ucode' class='form-control' value={{datas.sbcode}}>
+				</div>
+				<div class='form-group'>
+					<input type='submit' name='submit' value='ADD' class='btn btn-lg' style='background-color:purple; color:white;'>
+				</div>
+				
+			</form>
+		</div>
+{% endblock %}

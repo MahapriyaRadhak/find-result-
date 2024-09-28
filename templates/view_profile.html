@@ -1,0 +1,44 @@
+{% extends 'student_layout.html' %}
+{% block body %}
+	<div class='row'>
+		<div class='col-md-6 mt-2'>
+			<h2 style='color:purple;' class='mt-5 text-center'><i class="fa fa-address-card" aria-hidden="true"></i> View profile</h2>
+			<table class='mt-5 table table-bordered table-striped' style='margin-left:100px;'  >
+				<thead style='background-color:purple; font-size:20px; color:white;' class='text-center' >
+					<tr>
+						<th colspan='2'>Profile</th>
+					</tr>
+				</thead>
+				<tbody>
+				{% for row in datas %}
+					<tr style='font-size:19px; color:purple;'>
+						<td>Student photo</td>
+						<td><img src='{{url_for("static",filename="images/"+row.simage)}}'style='width:120px;'></td>
+					</tr>
+					<tr style='font-size:19px; color:purple;'>
+						<td>Roll No</td>
+						<td>{{row.srollno}}</td>
+					</tr>
+					<tr style='font-size:19px; color:purple;'>
+						<td>Student Name</td>
+						<td>{{row.sname}}</td>
+					</tr>
+					<tr style='font-size:19px; color:purple;'>
+						<td>Department</td>
+						<td>{{row.dname}}</td>
+					</tr>
+					<tr style='font-size:19px; color:purple;'>
+						<td>Semester</td>
+						<td>{{row.sem}}</td>
+					</tr>
+					<tr style='font-size:19px; color:purple;'>
+						<td>Mobile</td>
+						<td>{{row.smobile}}</td>
+					</tr>
+					
+				{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+	{% endblock %}

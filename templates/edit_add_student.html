@@ -1,0 +1,39 @@
+{% extends '_layout.html' %}
+{% block body %}
+
+		<div class='col-md-4 '>
+		<nav aria-label="breadcrumb" class='mt-5' >
+		  <ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="/homee" style='text-decoration:none;'>Home</a></li>
+			<li class="breadcrumb-item"><a href="/add_view_student" style='text-decoration:none;'>View student</a></li>
+			<li class="breadcrumb-item" style='text-decoration:none;'>Edit</li>
+		  </ol>
+		</nav>
+			<h2 class='ml-3' style='color:purple;'><i class="fa fa-clipboard" aria-hidden="true"></i> Edit add student</h2>
+			<form style='padding:10%; ' method="POST" action="">
+				<div class='form-group'>
+					<label style='color:purple;'>Name</label>
+					<input type='text' name='uname' class='form-control'value={{datas.sname}}  >
+				</div>
+				<div class='form-group'>
+					<label style='color:purple;'>Department</label>
+					<input type='text' name='udep' class='form-control' value={{datas.did}}>
+				</div>
+				<div class='form-group'>
+					<label style='color:purple;'>Email</label>
+					<input type='text' name='uemail' class='form-control' value={{datas.semail}}>
+				</div>
+				<div class='form-group'>
+					<label style='color:purple;'>Mobile</label>
+					<input type='text' name='umob' class='form-control' value={{datas.smobile}}>
+				</div>
+				<div class='form-group'>
+					<label style='color:purple;'>Roll no</label>
+					<input type='text' name='uroll' class='form-control' value={{datas.srollno}}>
+				</div>
+				<div class='form-group'>
+					<input type='submit' name='submit' value='ADD' class='btn btn-lg' style='background-color:purple; color:white;'>
+				</div>
+			</form>
+		</div>
+{% endblock %}
